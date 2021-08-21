@@ -3,6 +3,7 @@
 namespace Up;
 
 use pocketmine\Player;
+use pocketmine\block\Block;
 use pocketmine\math\Vector3;
 use pocketmine\plugin\PluginBase;
 use pocketmine\command\{Command, CommandSender};
@@ -18,6 +19,8 @@ class Loader extends PluginBase {
       $x = $sender->getX();
       $y = $sender->getY();
       $z = $sender->getZ();
+      $level = $sender->getLevel();
+      $level->setBlock(new Vector3($x, $y + $args[0] - 1, $z), Block::get(20));
       $sender->teleport(new Vector3($x, $y + $args[0], $z));
       $sender->sendMessage("you raised §b$args[0] §7blocks");
     }
