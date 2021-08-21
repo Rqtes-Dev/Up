@@ -1,0 +1,9 @@
+name: Up
+main: Up\Loader
+version: 1.0.0
+api: 3.0.0
+
+commands:
+  up:
+    description: "usage: /up <height>"
+    permission: "usage.up.command"
